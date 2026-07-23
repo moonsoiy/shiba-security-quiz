@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>교육팀 OX 퀴즈</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logoBox">
+
+    <img src="assets/logo.png" class="logo">
+
+    <h1>시바서버 보안국</h1>
+
+    <h2>교육팀 OX Quiz</h2>
+
+</div>
+
+    <!-- 시작 화면 -->
+    <div id="start">
+
+        <input
+            id="username"
+            type="text"
+            placeholder="이름을 입력하세요">
+
+        <select id="category">
+
+            <option value="전체">전체</option>
+
+            <!-- script.js가 자동으로 채워줌 -->
+
+        </select>
+
+        <button onclick="startQuiz()">
+
+            시작하기
+
+        </button>
+
+    </div>
+
+    <!-- 문제 화면 -->
+    <div id="quiz" style="display:none;">
+
+        <div class="progressBox">
+
+            <div class="progressBar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+            <div id="progressText"></div>
+
+        </div>
+
+        <div id="categoryName"></div>
+
+        <div id="questionNumber"></div>
+
+        <div id="question"></div>
+
+        <div class="buttons">
+
+            <button class="oBtn"
+                onclick="checkAnswer(true)">
+                ⭕ O
+            </button>
+
+            <button class="xBtn"
+                onclick="checkAnswer(false)">
+                ❌ X
+            </button>
+
+        </div>
+
+        <div id="result"></div>
+
+        <button id="nextBtn"
+            onclick="nextQuestion()">
+
+            다음 문제
+
+        </button>
+
+        <button onclick="retryWrongQuestions()">
+
+틀린 문제 다시 풀기
+
+</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
