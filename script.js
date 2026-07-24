@@ -174,63 +174,51 @@ document.querySelector(".xBtn").style.opacity="1";
 // 정답 확인
 // ==============================
 
+
 function checkAnswer(userAnswer){
+    const oBtn = document.querySelector(".oBtn");
+    const xBtn = document.querySelector(".xBtn");
 
-  document.querySelector(".oBtn").style.opacity=".6";
-document.querySelector(".xBtn").style.opacity=".6";
-
-if(q.answer){
-
-    document.querySelector(".oBtn").style.background="#198754";
-
-}else{
-
-    document.querySelector(".xBtn").style.background="#dc3545";
-
-}
-    // 이미 답을 눌렀으면 무시
-    if(document.querySelector(".oBtn").disabled){
+    // 이미 클릭해서 비활성화 상태라면 중복 실행 방지
+    if(oBtn.disabled){
         return;
     }
 
     const q = questions[current];
 
-    // 버튼 비활성화
-    document.querySelector(".oBtn").disabled = true;
-    document.querySelector(".xBtn").disabled = true;
+    // 버튼 비활성화 및 투명도 조절
+    oBtn.disabled = true;
+    xBtn.disabled = true;
 
-    if(userAnswer === q.answer){
+    oBtn.style.opacity = ".6";
+    xBtn.style.opacity = ".6";
 
-        score++;
-
-        document.getElementById("result").innerHTML =
-        "✅ 정답입니다!";
-
-    }else{
-
-        document.getElementById("result").innerHTML =
-        "❌ 오답입니다.";
-
-        wrongQuestions.push({
-
-            number: current + 1,
-
-            category: q.category,
-
-            question: q.question,
-
-            correct: q.answer,
-
-            user: userAnswer,
-
-            description: q.description
-
-        });
-
+    // 정답인 버튼 색상 강조
+    if(q.answer){
+        oBtn.style.background = "#198754";
+    } else {
+        xBtn.style.background = "#198754";
     }
 
-    document.getElementById("nextBtn").style.display = "block";
+    // 정/오답 판정 및 오답 데이터 저장
+    if(userAnswer === q.answer){
+        score++;
+        document.getElementById("result").innerHTML = "✅ 정답입니다!";
+    } else {
+        document.getElementById("result").innerHTML = "❌ 오답입니다.";
 
+        wrongQuestions.push({
+            number: q.number,
+            category: q.category,
+            question: q.question,
+            correct: q.answer,
+            user: userAnswer,
+            description: q.description
+        });
+    }
+
+    // ⭐ 다음 버튼을 화면에 표시!
+    document.getElementById("nextBtn").style.display = "block";
 }
 
 // ==============================
@@ -258,102 +246,115 @@ function nextQuestion(){
 // ==============================
 
 function finishQuiz(){
-
     const percent = Math.round((score / questions.length) * 100);
 
-    document.querySelector(".container").innerHTML = `
-
+    let html = `
         <h1>🎉 퀴즈 종료</h1>
-
         <h2>${username}님의 결과</h2>
-
         <h2>${score} / ${questions.length}점</h2>
-
         <h3>정답률 : ${percent}%</h3>
-
         <br>
-
-        <button onclick="showWrongNote()">
-            📖 오답노트 보기
-        </button>
-
-        <br><br>
-
-        <button onclick="location.reload()">
-            🔄 처음부터 다시
-        </button>
-
     `;
 
+    if (wrongQuestions.length > 0) {
+        html += `
+            <button onclick="showWrongNote()" style="width:100%; height:55px; background:#0d6efd; color:white; font-size:18px; border-radius:10px; margin-bottom:12px;">
+                📖 오답노트 보기 (${wrongQuestions.length}문제)
+            </button>
+            <br>
+        `;
+    } else {
+        html += `<p style="color:#28a745; font-weight:bold; font-size:20px; margin-bottom:20px;">👏 만점입니다! 틀린 문제가 없습니다.</p>`;
+    }
+
+    html += `
+        <button onclick="location.reload()" style="width:100%; height:55px; background:#6c757d; color:white; font-size:18px; border-radius:10px;">
+            🔄 처음부터 다시
+        </button>
+    `;
+
+    document.querySelector(".container").innerHTML = html;
 }
 
+
+// ==============================
+// 오답노트 보기 (문제 번호 및 틀린 목록)
+// ==============================
+
+function showWrongNote(){
+    let wrongHtml = `
+        <h1>📖 오답노트</h1>
+        <p style="text-align:center; color:#6c757d; margin-bottom:20px;">총 ${wrongQuestions.length}문제를 틀렸습니다.</p>
+    `;
+
+    wrongQuestions.forEach((item) => {
+        wrongHtml += `
+            <div class="wrongCard">
+                <h3>📌 ${item.number}번 문제 [${item.category}]</h3>
+                <p style="font-size:1.1rem; font-weight:bold; margin: 10px 0;">${item.question}</p>
+                <p>❌ <strong>내 답:</strong> ${item.user ? "⭕ O" : "❌ X"}</p>
+                <p>✅ <strong>정답:</strong> ${item.correct ? "⭕ O" : "❌ X"}</p>
+            </div>
+        `;
+    });
+
+    wrongHtml += `
+        <br>
+        <button onclick="retryWrongQuestions()" style="width:100%; height:55px; background:#28a745; color:white; font-size:18px; border-radius:10px; margin-bottom:10px;">
+            ✏️ 틀린 문제만 다시 풀기
+        </button>
+        <button onclick="location.reload()" style="width:100%; height:55px; background:#6c757d; color:white; font-size:18px; border-radius:10px;">
+            🔄 처음부터 다시
+        </button>
+    `;
+
+    document.querySelector(".container").innerHTML = wrongHtml;
+}
+
+
+// ==============================
+// 틀린 문제만 다시 풀기
+// ==============================
+
 function retryWrongQuestions(){
-
-    questions = wrongQuestions.map(item=>{
-
-        return{
-
-            number:item.number,
-
-            category:item.category,
-
-            question:item.question,
-
-            answer:item.correct,
-
-            description:item.description
-
+    questions = wrongQuestions.map(item => {
+        return {
+            number: item.number,
+            category: item.category,
+            question: item.question,
+            answer: item.correct,
+            description: item.description
         };
-
     });
 
     current = 0;
-
     score = 0;
-
     wrongQuestions = [];
 
     document.querySelector(".container").innerHTML = `
-<div id="quiz">
+        <div id="quiz">
+            <div class="progressBox">
+                <div class="progressBar">
+                    <div id="progressFill"></div>
+                </div>
+                <div id="progressText"></div>
+            </div>
 
-<div class="progressBox">
+            <div id="categoryName"></div>
+            <div id="questionNumber"></div>
+            <div id="question"></div>
 
-<div class="progressBar">
+            <div class="buttons">
+                <button class="oBtn" onclick="checkAnswer(true)">⭕ O</button>
+                <button class="xBtn" onclick="checkAnswer(false)">❌ X</button>
+            </div>
 
-<div id="progressFill"></div>
+            <div id="result"></div>
 
-</div>
-
-<div id="progressText"></div>
-
-</div>
-
-<div id="categoryName"></div>
-
-<div id="questionNumber"></div>
-
-<div id="question"></div>
-
-<div class="buttons">
-
-<button class="oBtn" onclick="checkAnswer(true)">⭕ O</button>
-
-<button class="xBtn" onclick="checkAnswer(false)">❌ X</button>
-
-</div>
-
-<div id="result"></div>
-
-<button id="nextBtn" onclick="nextQuestion()">
-
-다음 문제
-
-</button>
-
-</div>
-`;
+            <button id="nextBtn" onclick="nextQuestion()">다음 문제 ➜</button>
+        </div>
+    `;
 
     showQuestion();
-
 }
 
