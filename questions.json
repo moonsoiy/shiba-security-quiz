@@ -1,16 +1,359 @@
 [
     {
         "number":1,
-        "category":"감사",
-        "question":"공동계좌 미입금은 감사 대상이다.",
+        "category":"교육",
+        "question":"모든 행동명령어는 필수이다.",
         "answer":true,
-        "description":"공동계좌 미입금은 감사 대상입니다."
+        "description":"모든 행동명령어는 필수로 진행해주셔야 합니다."
     },
     {
         "number":2,
-        "category":"감사",
-        "question":"감사 대상은 하루에 한 번만 검사한다.",
+        "category":"교육",
+        "question":"끌고가기를 진행할 때에는 미란다고지가 필수로 함께 진행되어야 한다.",
         "answer":false,
-        "description":"상황에 따라 여러 번 검사할 수 있습니다."
+        "description":"미란다고지가 함께 진행되어야 하는 건 수갑 묶을때 입니다."
+    },
+    {
+        "number":3,
+        "category":"교육",
+        "question":"시체 드래그는 사용 가능하다.",
+        "answer":false,
+        "description":"시체에 드래그는 절대 사용해서는 안됩니다."
+    },
+    {
+        "number":4,
+        "category":"교육",
+        "question":"수갑을 묶을 때에는 미란다고지가 필수로 함께 진행되어야 한다.",
+        "answer":true,
+        "description":"수갑을 묶을 때에는 미란다고지가 필수로 함께 진행되어야 합니다."
+    },
+    {
+        "number":5,
+        "category":"교육",
+        "question":"닭고기, 보석, C4는 불법 물건에 속한다.",
+        "answer":false,
+        "description":"닭고기, 보석, C4는 불법 물건에 속하지 않습니다."
+    },
+    {
+        "number":6,
+        "category":"교육",
+        "question":"출근 중 저장공간이 부족하다면 영상녹화를 생략해도 괜찮다.",
+        "answer":false,
+        "description":"출근 중 저장공간 부족으로 영상이 끊기는 것 또한 경고건입니다. 출근 중 영상녹화는 항상 해주셔야 합니다."
+    },
+    {
+        "number":7,
+        "category":"교육",
+        "question":"영상녹화는 이틀동안 보관이 필수이다.",
+        "answer":false,
+        "description":"영상녹화는 24시간만 보관해놓으면 됩니다."
+    },
+    {
+        "number":8,
+        "category":"교육",
+        "question":"국유지 침입을 한 시민을 대상으로 집행을 할 때에 법률 계산기에서 국유지 침입만 클릭 후 진행하면 된다.",
+        "answer":false,
+        "description":"국유지 침입 시 행동강령에 3회 퇴장 요구를 한 후 집행이 맞기 때문에 공무 집행 방해도 추가해야 합니다."
+    },
+    {
+        "number":9,
+        "category":"교육",
+        "question":"노보석금은 경관 재량으로 사용할 수 있다.",
+        "answer":false,
+        "description":"노보석금은 고위직 허가하에만 진행 할 수 있습니다."
+    },
+    {
+        "number":10,
+        "category":"교육",
+        "question":"출근중인 공무원은 보호구역으로 진입할 수 없다.",
+        "answer":true,
+        "description":"출근중인 공무원은 보호구역으로 진입할 수 없습니다. 만약 집행 대상자가 보호구역에 있다면 나와달라고 요청 후 집행을 진행해야 합니다."
+    },
+    {
+        "number":11,
+        "category":"교육",
+        "question":"공무원 기능을 활용하여 사소한 장난을 치는것은 괜찮다.",
+        "answer":false,
+        "description":"공무원 기능은 정당한 사유가 있을 떄에만 사용해야 합니다."
+    },
+    {
+        "number":12,
+        "category":"교육",
+        "question":"교육생은 스나, 스턴건, 신호탄을 소지 할 수 없다.",
+        "answer":true,
+        "description":"스나, 스턴건은 부관 이상부터만 소지할 수 있고 신호탄은 고위직 제외 소지할 수 없습니다."
+    },
+    {
+        "number":13,
+        "category":"교육",
+        "question":"출근중인 공무원은 공무원 무기만 사용해야 한다. (AP 피스톨, MK2 시리즈)",
+        "answer":false,
+        "description":"출근중인 공무원은 공무 무기와 시민 무기 둘다 사용 가능합니다."
+    },
+    {
+        "number":14,
+        "category":"교육",
+        "question":"신호탄은 부관 이상부터 소지 가능하다.",
+        "answer":false,
+        "description":"신호탄은 고위직 제외 보안국 인원 모두가 소지할 수 없다."
+    },
+    {
+        "number":15,
+        "category":"교육",
+        "question":"개인적인 사유로 인해 잠시 자리를 비워야 할 경우 10분 내로 해결 가능한 일이면 출근상태로 관제에게 말만 전한 뒤 다녀와도 무방하다.",
+        "answer":false,
+        "description":"출근 중 사소한것 이라도 (화장실, 흡연) 무조건 퇴근을 하고 퇴근 절차를 진행 후 다녀와야 합니다."
+    },
+    {
+        "number":16,
+        "category":"교육",
+        "question":"출근중인 스태프는 기존 벌금의 3배를 징수해야 한다.",
+        "answer":true,
+        "description":"출근중인 스태프는 기존 벌금의 3배를 징수해야 합니다."
+    },
+    {
+        "number":17,
+        "category":"교육",
+        "question":"출근 중 자리비움 (잠수처리) 는 관리자 처벌 대상이다.",
+        "answer":true,
+        "description":"출근 중 자리비움은 절대 떠서는 안되며, 관리자 처벌 대상입니다."
+    },
+    {
+        "number":18,
+        "category":"교육",
+        "question":"퇴근 중 통무에 참여할 수 있다.",
+        "answer":false,
+        "description":"퇴근 중에는 인트라넷을 출근하는 업무 혹은 고위직 허가 없이는 통무에 참여할 수 없습니다."
+    },
+    {
+        "number":19,
+        "category":"교육",
+        "question":"퇴근 후 공무원 무기는 절대 사용을 금지한다.",
+        "answer":true,
+        "description":"퇴근 후 공무원 무기 사용은 권력남용이므로 절대 사용을 금지합니다."
+    },
+    {
+        "number":20,
+        "category":"교육",
+        "question":"피크타임 시작시간은 19시부터이다.",
+        "answer":false,
+        "description":"피크타임 시작시간은 18시 30분부터 입니다."
+    },
+    {
+        "number":21,
+        "category":"교육",
+        "question":"주간 출근시간 미달일 경우에 강도측으로 RP를 뛰었을 경우 내부규정에 의거하여 중징계 처벌 대상이다.",
+        "answer":true,
+        "description":"출근시간 미달일 경우 RP 1판 이상 진행은 1급 경고 2회, 2판 이상 진행은 3회, 3판 이상 진행은 교육생 강등 처리 대상자입니다."
+    },
+    {
+        "number":22,
+        "category":"교육",
+        "question":"퇴근 시에 최상급자에게 보고 후 퇴근한다",
+        "answer":true,
+        "description":"퇴근 시에는 최상급자에게 보고 후에 퇴근해야 인원파악이 가능하기 때문에 보고 후 퇴근이 필수입니다."
+    },
+    {
+        "number":23,
+        "category":"교육",
+        "question":"피크타임 내 알피가 가능한 출근인원은 15명이다.",
+        "answer":false,
+        "description":"피크타임 내 알피가 가능한 출근인원은 13명입니다. 15명은 각 전투부서 연습신청서 신청 기준입니다."
+    },
+    {
+        "number":24,
+        "category":"교육",
+        "question":"차량에 탑승하면 문잠금을 필수로 진행한다.",
+        "answer":true,
+        "description":"차량에 탑승하면 문잠금을 필수로 진행해야 합니다."
+    },
+    {
+        "number":25,
+        "category":"교육",
+        "question":"공무원 차량 삭제는 렉카를 호출 한 뒤 꼭 차량이 삭제된 걸 확인 후에 국유지로 복귀한다.",
+        "answer":true,
+        "description":"공차삭은 꼭 차량이 삭제되는걸 확인 후에 국유지로 복귀해야 합니다."
+    },
+    {
+        "number":26,
+        "category":"교육",
+        "question":"2인승 차량은 강제로 태우기가 불가능하다.",
+        "answer":false,
+        "description":"2인승 차량도 강제로 태우기가 가능합니다."
+    },
+    {
+        "number":27,
+        "category":"교육",
+        "question":"차량에 강제로 탑승 시킬때에는 차량 문을 열고 진행해야 한다.",
+        "answer":false,
+        "description":"차량에 강제로 탑승 시킬때에는 문이 잠긴 상황에서도 가능합니다. 차량 문은 탑승 할때를 제외한 나머지 상황에서는 항상 잠금 상태를 유지해야 합니다."
+    },
+    {
+        "number":28,
+        "category":"교육",
+        "question":"4인승 차량은 무릎에 강제로 앉히기가 불가능하다.",
+        "answer":false,
+        "description":"4인승 차량은 무릎에 강제로 앉히기가 가능합니다. 뒷자석, 조수석 순으로 무릎에 앉히기가 가능합니다."
+    },
+    {
+        "number":29,
+        "category":"교육",
+        "question":"도로교통단속 중 난폭운전을 한 운전자에게 가서 사전 고지 없이 수갑묶고 미란다고지를 진행하면 된다.",
+        "answer":false,
+        "description":"난폭운전의 경우 먼저 도로교통 위반자에게 인정하는지 여쭤본 후 집행해야 합니다."
+    },
+    {
+        "number":30,
+        "category":"교육",
+        "question":"난폭운전의 성립 기준은 도로교통법을 세가지 이상 위반할 경우 성립이 된다.",
+        "answer":true,
+        "description":"난폭운전의 성립 기준은 도로교통법을 세가지 이상 위반할 경우 성립이 됩니다."
+    },
+    {
+        "number":31,
+        "category":"교육",
+        "question":"폭주와 속도위반은 공존할 수 있다.",
+        "answer":false,
+        "description":"폭주와 속도위반은 공존할 수 업습니다."
+    },
+    {
+        "number":32,
+        "category":"교육",
+        "question":"내부적으로 도로교통법 위반 차량을 발견하여 PM을 찍으려 했지만 운전자가 뛰어내린 상황이라면 PM을 찍으면 안된다.",
+        "answer":true,
+        "description":"내부적으로 차량에 운전자가 없다면 PM을 찍을 수 없습니다."
+    },
+    {
+        "number":33,
+        "category":"교육",
+        "question":"도로교통단속 중 시민이 경관의 영상을 보여줄 것을 요구한다면 스태프에게 먼저 영상을 보여주고 스태프를 통하여 진행한다.",
+        "answer":true,
+        "description":"시민에게 경관의 영상을 보여줄 의무는 없습니다. 하여 스태프를 통해 사건처리를 합니다."
+    },
+    {
+        "number":34,
+        "category":"교육",
+        "question":"유치장에서 집행 중 범죄자가 벌금이 부족하다면 10분당 1000만원 더해서 최대 구금 120분까지 추가적으로 집행하면 된다.",
+        "answer":false,
+        "description":"10분당 1000만원이 아닌 1분당 1000만원 더해서 집행합니다."
+    },
+    {
+        "number":35,
+        "category":"교육",
+        "question":"차량이 방치되는것을 방지하기 위해 범죄자가 탑승하고 있는 차량을 비콘에 넣고 유치장으로 집행하러 가면 된다.",
+        "answer":false,
+        "description":"범죄자가 탑승하고 있는 차량은 절대 비콘에 넣으면 안됩니다."
+    },
+    {
+        "number":36,
+        "category":"교육",
+        "question":"PM은 3초 간격으로 3회 찍는다.",
+        "answer":true,
+        "description":"PM은 3초 간격으로 3회 찍어야한다."
+    },
+    {
+        "number":37,
+        "category":"교육",
+        "question":"조직은 PM 3회 전에도 공무원에게 고의적인 범퍼로 피가 닳았을 경우 바로 총기발포가 가능하다.",
+        "answer":true,
+        "description":"조직은 PM 3회 전에도 공무원에게 고의적인 범퍼로 피가 닳았을 경우 바로 총기발포가 가능합니다."
+    },
+    {
+        "number":38,
+        "category":"교육",
+        "question":"즉흥은 교통단속 > 도주 > 즉흥 순으로 발생한다.",
+        "answer":true,
+        "description":"즉흥은 교통단속 > 도주 > 즉흥 순으로 발생합니다."
+    },
+    {
+        "number":39,
+        "category":"교육",
+        "question":"수배, 도주, 즉흥 진행 시 바다, 강, 산, 비포장도로, 지하, 건물 내부, 건물 옥상, 사다리, 기찻길, 보호구역의 이동이 가능하다.",
+        "answer":false,
+        "description":"수배, 도주, 즉흥 진행 시 바다, 강, 산, 비포장도로, 지하, 건물 내부, 건물 옥상, 사다리, 기찻길, 보호구역 진입 시 패알 사유입니다."
+    },
+    {
+        "number":40,
+        "category":"교육",
+        "question":"모든 사건의 공소시효는 2시간이다.",
+        "answer":true,
+        "description":"모든 사건의 공소시효는 2시간입니다."
+    },
+    {
+        "number":41,
+        "category":"교육",
+        "question":"긴급수배 성립 조건은 공무원 살인, 공무원 폭행, 공무원 차량 파손, 공무원 차량 탈취로 총 4개이다.",
+        "answer":true,
+        "description":"공무원 살인, 공무원 폭행,공무원 차량 파손, 공무원 차량 탈취는 긴급수배 진행 대상입니다."
+    },
+    {
+        "number":42,
+        "category":"교육",
+        "question":"출근 중 스태프 콜을 진행할때에는 우선 버스터콜로 허가를 구한 후 진행한다.",
+        "answer":true,
+        "description":"출근 중 스태프 콜을 할때에는 버스터콜로 간부직과 고위직의 허가를 구한 후 진행해야 한다. 간단한 스태프콜의 경우 (오브젝트 삭제, 렉카 전퇴로 인한 스태프콜) 버스터콜 없이도 진행 가능합니다."
+    },
+    {
+        "number":43,
+        "category":"교육",
+        "question":"보안관이 순찰오토바이 탑승 중 발생한 교통사고로 공무원 폭행, 공무원 살인은 적용할 수 없다.",
+        "answer":true,
+        "description":"오토바이 탑승으로 인한 공무원 폭행과 공무원 살인은 적용할 수 없습니다."
+    },
+    {
+        "number":44,
+        "category":"교육",
+        "question":"마약단속 진행 시 마약 외 불법물건, 불법무기가 발견되었다면 긴급 체포를 진행 할 수 있다.",
+        "answer":false,
+        "description":"마약단속 진행 시에는 '마약'이 발견되어야 집행이 가능합니다."
+    },
+    {
+        "number":45,
+        "category":"교육",
+        "question":"뉴비는 최대 3회까지 도로교통법 위반을 제외받을 수 있다.",
+        "answer":true,
+        "description":"F7 기준 뉴비라면 최대 3회까지 도로교통법 위반을 제외받을 수 있습니다."
+    },
+    {
+        "number":46,
+        "category":"교육",
+        "question":"알피 출동 사이드공지는 알피 허가 이후에 바로 올리면 된다.",
+        "answer":false,
+        "description":"알피 출동 사이드공지는 알피 허가 이후 벨이 울리면 올립니다."
+    },
+    {
+        "number":47,
+        "category":"교육",
+        "question":"강도측 전멸 전이여도 강도측이 모두 사망한게 확실 시 되면 집행을 진행 할 수 있다.",
+        "answer":false,
+        "description":"수갑을 묶거나 집행을 할때에는 무조건 강도측 전멸이 올라왔는지 확인하고 집행해야 합니다."
+    },
+    {
+        "number":48,
+        "category":"교육",
+        "question":"사망 시 디스코드 마이크는 10초 이내로 꺼야한다.",
+        "answer":true,
+        "description":"사후브리핑 방지를 위해 사망 시 디스코드 마이크는 10초 이내로 꺼야합니다."
+    },
+    {
+        "number":49,
+        "category":"교육",
+        "question":"사망 시 2분 이내로 다운을 선언해야 한다.",
+        "answer":true,
+        "description":"사망 시 2분 이내로 다운을 선언해야 합니다."
+    },
+    {
+        "number":50,
+        "category":"교육",
+        "question":"중단은 다운 선언 기준 2분 이내로 선언해야 한다.",
+        "answer":false,
+        "description":"중단은 다운 선언 기준 2분이 아닌 사망 시점 기준 2분내로 진행해야 합니다."
+    },
+    {
+        "number":51,
+        "category":"교육",
+        "question":"영장의 중단 횟수는 5회이다.",
+        "answer":false,
+        "description":"영장의 정해진 중단 횟수는 없습니다."
     }
 ]
