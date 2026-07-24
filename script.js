@@ -17,28 +17,19 @@ let wrongQuestions = [];
 // ==============================
 
 window.onload = async () => {
-
     const response = await fetch("questions.json");
-
     allQuestions = await response.json();
 
     createCategory();
 
-    const savedName = localStorage.getItem("username");
+    // 이름 입력창을 항상 깨끗하게 비워둡니다.
+    document.getElementById("username").value = "";
 
-if(savedName){
-
-    document.getElementById("username").value = savedName;
-
-}
-
-const savedCategory = localStorage.getItem("category");
-
-if(savedCategory){
-
-    document.getElementById("category").value = savedCategory;
-
-}
+    // (선택사항) 카테고리 기억 기능도 지우고 싶다면 아래 구문도 함께 빼주시면 됩니다.
+    const savedCategory = localStorage.getItem("category");
+    if(savedCategory){
+        document.getElementById("category").value = savedCategory;
+    }
 };
 
 
