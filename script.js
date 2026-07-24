@@ -311,6 +311,98 @@ function showWrongNote(){
     document.querySelector(".container").innerHTML = wrongHtml;
 }
 
+// ==============================
+// 정답 확인
+// ==============================
+function checkAnswer(userAnswer) {
+  const oBtn = document.querySelector(".oBtn");
+  const xBtn = document.querySelector(".xBtn");
+
+  // 이미 클릭한 경우 클릭 방지
+  if (oBtn.disabled) return;
+
+  const q = questions[current];
+
+  // 버튼 비활성화 및 투명도 조절
+  oBtn.disabled = true;
+  xBtn.disabled = true;
+  oBtn.style.opacity = ".6";
+  xBtn.style.opacity = ".6";
+
+  // 정답 강조 표시
+  if (q.answer) {
+    oBtn.style.background = "#198754";
+  } else {
+    xBtn.style.background = "#198754";
+  }
+
+  // 정/오답 판정 및 오답 저장
+  if (userAnswer === q.answer) {
+    score++;
+    document.getElementById("result").innerHTML = "✅ 정답입니다!";
+  } else {
+    document.getElementById("result").innerHTML = "❌ 오답입니다.";
+
+    wrongQuestions.push({
+      number: q.number,
+      category: q.category,
+      question: q.question,
+      correct: q.answer,
+      user: userAnswer,
+      description: q.description // json의 description 값을 가져옴
+    });
+  }
+
+  document.getElementById("nextBtn").style.display = "block";
+}
+
+
+// ==============================
+// 오답노트 화면 출력 (추가된 부분!)
+// ==============================
+function showWrongNote() {
+  const container = document.querySelector(".container");
+
+  if (wrongQuestions.length === 0) {
+    container.innerHTML = `
+      <h1>🎉 틀린 문제가 없습니다!</h1>
+      <p style="text-align:center; font-size:18px; margin:20px 0;">모든 문제를 맞히셨습니다. 축하합니다!</p>
+      <button onclick="location.reload()" style="width:100%; height:50px; background:#0d6efd; color:white; border-radius:10px; font-size:18px;">
+        🔄 처음으로 돌아가기
+      </button>
+    `;
+    return;
+  }
+
+  let wrongHtml = `<h1>📖 오답 노트</h1>`;
+
+  wrongQuestions.forEach((q, idx) => {
+    wrongHtml += `
+      <div class="wrongCard">
+        <h3>[${q.category}] ${q.number}번 문제</h3>
+        <p><strong>문제:</strong> ${q.question}</p>
+        <p><strong>내 제출:</strong> <span style="color:#dc3545; font-weight:bold;">${q.user ? "⭕ O" : "❌ X"}</span></p>
+        <p><strong>정답:</strong> <span style="color:#28a745; font-weight:bold;">${q.correct ? "⭕ O" : "❌ X"}</span></p>
+        <p style="background:#eef3f8; padding:10px; border-radius:8px; margin-top:10px;">
+          💡 <strong>해설:</strong> ${q.description || "해설이 없습니다."}
+        </p>
+      </div>
+    `;
+  });
+
+  wrongHtml += `
+    <br>
+    <button onclick="retryWrongQuestions()" style="width:100%; height:50px; background:#28a745; color:white; border-radius:10px; font-size:18px; margin-bottom:10px;">
+      ✏️ 틀린 문제만 다시 풀기
+    </button>
+    <button onclick="location.reload()" style="width:100%; height:50px; background:#0d6efd; color:white; border-radius:10px; font-size:18px;">
+      🔄 처음으로 돌아가기
+    </button>
+  `;
+
+  container.innerHTML = wrongHtml;
+}
+
 
 // ==============================
 // 틀린 문제만 다시 풀기
