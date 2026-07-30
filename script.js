@@ -11,6 +11,16 @@ let username = "";
 let wrongQuestions = [];
 
 // ==============================
+// 🎲 배열을 확실하게 섞어주는 함수 (Fisher-Yates Shuffle)
+// ==============================
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// ==============================
 // JSON 읽기
 // ==============================
 window.onload = async () => {
@@ -19,7 +29,7 @@ window.onload = async () => {
 
     createCategory();
 
-    // 이름 입력창 초기화 (항상 비워둡니다)
+    // 이름 입력창 초기화
     document.getElementById("username").value = "";
 
     const savedCategory = localStorage.getItem("category");
@@ -65,8 +75,8 @@ function startQuiz(){
         questions = allQuestions.filter(q => q.category === selectedCategory);
     }
 
-    // 🎲 [기능 개선 1] 선택한 모든 조건에서 문제가 랜덤으로 섞이도록 처리
-    questions.sort(() => Math.random() - 0.5);
+    // 🎲 피셔-예이츠 알고리즘으로 완전 무작위 셔플
+    shuffleArray(questions);
 
     current = 0;
     score = 0;
@@ -85,7 +95,7 @@ function showQuestion(){
     const q = questions[current];
 
     document.getElementById("categoryName").innerText = `📂 ${q.category}`;
-    document.getElementById("questionNumber").innerText = `${current + 1}번 문제`; // 문제 번호는 진행 순서대로 표시
+    document.getElementById("questionNumber").innerText = `${current + 1}번 문제`;
     document.getElementById("question").innerText = q.question;
 
     const percent = ((current + 1) / questions.length) * 100;
@@ -95,7 +105,6 @@ function showQuestion(){
     document.getElementById("result").innerHTML = "";
     document.getElementById("nextBtn").style.display = "none";
 
-    // 버튼 활성화 및 스타일 초기화
     const oBtn = document.querySelector(".oBtn");
     const xBtn = document.querySelector(".xBtn");
 
@@ -123,14 +132,12 @@ function checkAnswer(userAnswer){
     oBtn.style.opacity = ".6";
     xBtn.style.opacity = ".6";
 
-    // 정답 위치 하이라이트
     if(q.answer){
         oBtn.style.background = "#198754";
     } else {
         xBtn.style.background = "#198754";
     }
 
-    // 💡 [기능 개선 2] 오답 시 밑에 바로 해설 표시
     if(userAnswer === q.answer){
         score++;
         document.getElementById("result").innerHTML = `<div style="color:#198754;">✅ 정답입니다!</div>`;
@@ -248,8 +255,7 @@ function retryWrongQuestions(){
         description: item.description
     }));
 
-    // 틀린 문제 재도전 시에도 무작위로 섞어줌
-    questions.sort(() => Math.random() - 0.5);
+    shuffleArray(questions);
 
     current = 0;
     score = 0;
