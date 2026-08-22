@@ -81,7 +81,7 @@
         "category":"교육",
         "question":"교육생은 스나, 스턴건, 신호탄을 소지 할 수 없다.",
         "answer":true,
-        "description":"스나, 스턴건은 부관 이상부터만 소지할 수 있고 신호탄은 고위직 제외 소지할 수 없습니다."
+        "description":"스나, 스턴건은 부관 이상부터만 소지할 수 있고 신호탄은 고위직, SDT 대원 이상만 소지할 수 있습니다."
     },
     {
         "number":13,
@@ -95,7 +95,7 @@
         "category":"교육",
         "question":"신호탄은 부관 이상부터 소지 가능하다.",
         "answer":false,
-        "description":"신호탄은 고위직 제외 보안국 인원 모두가 소지할 수 없다."
+        "description":"신호탄은 고위직, SDT 대원 제외 소지할 수 없습니다."
     },
     {
         "number":15,
@@ -296,61 +296,54 @@
     {
         "number":43,
         "category":"교육",
-        "question":"보안관이 순찰오토바이 탑승 중 발생한 교통사고로 공무원 폭행, 공무원 살인은 적용할 수 없다.",
-        "answer":true,
-        "description":"오토바이 탑승으로 인한 공무원 폭행과 공무원 살인은 적용할 수 없습니다."
-    },
-    {
-        "number":44,
-        "category":"교육",
         "question":"마약단속 진행 시 마약 외 불법물건, 불법무기가 발견되었다면 긴급 체포를 진행 할 수 있다.",
         "answer":false,
         "description":"마약단속 진행 시에는 '마약'이 발견되어야 집행이 가능합니다."
     },
     {
-        "number":45,
+        "number":44,
         "category":"교육",
         "question":"뉴비는 최대 3회까지 도로교통법 위반을 제외받을 수 있다.",
         "answer":true,
         "description":"F7 기준 뉴비라면 최대 3회까지 도로교통법 위반을 제외받을 수 있습니다."
     },
     {
-        "number":46,
+        "number":45,
         "category":"교육",
         "question":"알피 출동 사이드공지는 알피 허가 이후에 바로 올리면 된다.",
         "answer":false,
         "description":"알피 출동 사이드공지는 알피 허가 이후 벨이 울리면 올립니다."
     },
     {
-        "number":47,
+        "number":46,
         "category":"교육",
         "question":"강도측 전멸 전이여도 강도측이 모두 사망한게 확실 시 되면 집행을 진행 할 수 있다.",
         "answer":false,
         "description":"수갑을 묶거나 집행을 할때에는 무조건 강도측 전멸이 올라왔는지 확인하고 집행해야 합니다."
     },
     {
-        "number":48,
+        "number":47,
         "category":"교육",
         "question":"사망 시 디스코드 마이크는 10초 이내로 꺼야한다.",
         "answer":true,
         "description":"사후브리핑 방지를 위해 사망 시 디스코드 마이크는 10초 이내로 꺼야합니다."
     },
     {
-        "number":49,
+        "number":48,
         "category":"교육",
         "question":"사망 시 2분 이내로 다운을 선언해야 한다.",
         "answer":true,
         "description":"사망 시 2분 이내로 다운을 선언해야 합니다."
     },
     {
-        "number":50,
+        "number":49,
         "category":"교육",
         "question":"중단은 다운 선언 기준 2분 이내로 선언해야 한다.",
         "answer":false,
         "description":"중단은 다운 선언 기준 2분이 아닌 사망 시점 기준 2분내로 진행해야 합니다."
     },
     {
-        "number":51,
+        "number":50,
         "category":"교육",
         "question":"영장의 중단 횟수는 5회이다.",
         "answer":false,
